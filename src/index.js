@@ -7,13 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import './styles/index.css';
 import Page404 from './components/404/Page404';
 import ErrorPage from './components/errorPage/ErrorPage';
+import { DataProvider } from 'context/dataContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/error' element={<ErrorPage />} />
+        <Route
+          path='/'
+          element={
+            <DataProvider>
+              <App />
+            </DataProvider>
+          }
+        />
         <Route path='*' element={<Page404 />} />
       </Routes>
     </BrowserRouter>

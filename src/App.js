@@ -1,34 +1,30 @@
-import logo from './logo.svg';
+import ProductsTable from 'components/productsTable/ProductsTable';
+
+import ErrorPage from 'components/errorPage/ErrorPage';
+import PageLoader from 'components/pageLoader/PageLoader';
+
+import { REQ_STATUS } from 'api/api';
+import { useData } from './context/dataContext';
+
 import './App.scss';
-import { useEffect } from 'react';
-import api, { endponits } from './api/api';
-import productApi from './api/productApi';
 
 const App = () => {
-  useEffect(() => {
-    productApi
-      .get()
-      .then((res) => {
-        console.log({ res });
-      })
-      .catch((err) => {
-        console.log({ err });
-      });
-  }, []);
+  const { status } = useData();
 
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  switch (status) {
+    case REQ_STATUS.IDLE:
+    case REQ_STATUS.LOADING:
+      return <PageLoader />;
+
+    case REQ_STATUS.ERROR:
+      return <ErrorPage />;
+    default:
+      return (
+        <div className='App'>
+          <ProductsTable />
+        </div>
+      );
+  }
 };
 
 export default App;
