@@ -7,7 +7,7 @@ export const tableKeys = {
 };
 
 export const tableHeaders = [
-  { key: tableKeys.id, label: 'ID', sortable: false },
+  { key: tableKeys.id, label: 'ID', sortable: true },
   { key: tableKeys.product, label: 'Produkt', sortable: true },
   { key: tableKeys.type, label: 'Typ', sortable: false },
   { key: tableKeys.format, label: 'Format', sortable: false },
@@ -21,7 +21,7 @@ const formatDataToProductsTable = ({ products, formats, papers }) => {
     return {
       id: `${product.productId}`,
       product: product.product,
-      type: product.type,
+      type: format.typeName,
       format: format.name,
       paper: paper.name,
     };
