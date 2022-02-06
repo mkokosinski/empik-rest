@@ -1,0 +1,60 @@
+@use 'styles/shared' as *;
+
+.table {
+  overflow: auto;
+  background-color: $white-100;
+  box-shadow: 0 2px 18px $shadow;
+  border-radius: 5px;
+  table {
+    min-width: 700px;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  th {
+    border-bottom: 1px solid $blue-pale-30;
+    color: $anthracite-80;
+    font-size: 0.875rem;
+    font-weight: $font-medium;
+    line-height: 130%;
+    overflow: hidden;
+    padding: 12px;
+    padding-left: 24px;
+    text-align: left;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      text-overflow: clip;
+    }
+  }
+
+  tr {
+    td {
+      border-bottom: 1px solid $blue-pale-15;
+      font-size: 0.9375rem;
+      font-weight: $font-regular;
+      line-height: 130%;
+      overflow: hidden;
+      padding: 20px 24px;
+      text-overflow: ellipsis;
+    }
+
+    &[aria-disabled='true'] {
+      color: $anthracite-50;
+      pointer-events: none;
+      background-color: $blue-pale-5;
+    }
+
+    &:last-of-type {
+      td {
+        border: none;
+      }
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: 66px 0;
+    width: 100%;
+  }
+}

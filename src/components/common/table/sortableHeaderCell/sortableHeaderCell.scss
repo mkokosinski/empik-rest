@@ -1,0 +1,35 @@
+@use 'styles/shared' as *;
+
+.sortable-cell {
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    max-width: 80%;
+  }
+
+  &__arrows {
+    color: $anthracite-25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    transition: color 150ms;
+
+    &:hover {
+      color: $anthracite-50;
+    }
+
+    &--active {
+      color: $anthracite-70;
+    }
+
+    &:first-child {
+      transform: rotate(180deg);
+    }
+  }
+}
