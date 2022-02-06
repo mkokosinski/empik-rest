@@ -11,6 +11,7 @@ export const REQ_STATUS = {
   LOADING: 'loading',
   SUCCESS: 'success',
   ERROR: 'error',
+  IDLE: 'idle',
 };
 
 const baseHeaders = {
