@@ -7,7 +7,11 @@ const ProductsTable = () => {
   const data = useData();
   const colSizes = [1, 3, 2, 1, 2];
   const rows = getRows(data);
-  return <Table colSizes={colSizes} rows={rows} headers={tableHeaders} />;
+  return (
+    <div data-testid='products-table'>
+      <Table colSizes={colSizes} rows={rows} headers={tableHeaders} />;
+    </div>
+  );
 };
 
 export default ProductsTable;
