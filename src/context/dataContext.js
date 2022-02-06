@@ -12,7 +12,7 @@ const defaultState = {
   errorMessage: '',
 };
 
-const DataContext = createContext({
+export const DataContext = createContext({
   ...defaultState,
 });
 
