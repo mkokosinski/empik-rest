@@ -8,7 +8,7 @@ const defaultState = {
   products: [],
   formats: [],
   papers: [],
-  status: '',
+  status: REQ_STATUS.IDLE,
 };
 
 const DataContext = createContext({
@@ -24,15 +24,15 @@ const DataProvider = ({ children }) => {
   const [status, setStatus] = useState(defaultState.status);
 
   const getProducts = useCallback(async () => {
-    await productApi.get().then((res) => setProducts(res));
+    await productApi.get().then((res) => setProducts(res.products));
   }, []);
 
   const getFormats = useCallback(async () => {
-    await formatApi.get().then((res) => setFormats(res));
+    await formatApi.get().then((res) => setFormats(res.formats));
   }, []);
 
   const getPapers = useCallback(async () => {
-    await paperApi.get().then((res) => setPapers(res));
+    await paperApi.get().then((res) => setPapers(res.papers));
   }, []);
 
   const getData = useCallback(async () => {
