@@ -1,5 +1,5 @@
-import React from 'react';
 import Table from 'components/common/table/Table';
+
 import { getRows, tableHeaders } from './productTable.helpers';
 import { useData } from 'context/dataContext';
 

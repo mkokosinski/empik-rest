@@ -1,0 +1,26 @@
+@use 'styles/shared' as *;
+
+.page404 {
+  align-items: center;
+  background-color: $white-100;
+  border-radius: 5px;
+  box-shadow: 0 2px 18px $blue-pale-20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  height: 200px;
+  margin: 10vw;
+
+  button {
+    background-color: $blue-pale-15;
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 1rem 2rem;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $blue-pale-30;
+    }
+  }
+}

@@ -9,6 +9,7 @@ const defaultState = {
   formats: [],
   papers: [],
   status: REQ_STATUS.IDLE,
+  errorMessage: '',
 };
 
 const DataContext = createContext({
@@ -22,6 +23,7 @@ const DataProvider = ({ children }) => {
   const [formats, setFormats] = useState(defaultState.formats);
   const [papers, setPapers] = useState(defaultState.papers);
   const [status, setStatus] = useState(defaultState.status);
+  const [errorMessage, setErrorMessage] = useState(defaultState.errorMessage);
 
   const getProducts = useCallback(async () => {
     await productApi.get().then((res) => setProducts(res.products));
@@ -41,8 +43,9 @@ const DataProvider = ({ children }) => {
       .then(() => {
         setStatus(REQ_STATUS.SUCCESS);
       })
-      .catch(() => {
+      .catch((err) => {
         setStatus(REQ_STATUS.ERROR);
+        setErrorMessage(`${err}`);
       });
   }, [getProducts, getFormats, getPapers]);
 
@@ -50,7 +53,9 @@ const DataProvider = ({ children }) => {
     getData();
   }, [getData]);
 
-  return <DataContext.Provider value={{ products, formats, papers, status }}>{children}</DataContext.Provider>;
+  return (
+    <DataContext.Provider value={{ products, formats, papers, status, errorMessage }}>{children}</DataContext.Provider>
+  );
 };
 
 export { DataProvider, useData };
