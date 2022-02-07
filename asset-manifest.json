@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/empik-rest/static/css/main.02676c90.css",
-    "main.js": "/empik-rest/static/js/main.20975e98.js",
+    "main.js": "/empik-rest/static/js/main.eada559c.js",
     "static/js/787.5e584de4.chunk.js": "/empik-rest/static/js/787.5e584de4.chunk.js",
     "index.html": "/empik-rest/index.html",
     "static/media/arrow.svg": "/empik-rest/static/media/arrow.2388cd74730fc583d73d14456a3fc53d.svg",
     "main.02676c90.css.map": "/empik-rest/static/css/main.02676c90.css.map",
-    "main.20975e98.js.map": "/empik-rest/static/js/main.20975e98.js.map",
+    "main.eada559c.js.map": "/empik-rest/static/js/main.eada559c.js.map",
     "787.5e584de4.chunk.js.map": "/empik-rest/static/js/787.5e584de4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02676c90.css",
-    "static/js/main.20975e98.js"
+    "static/js/main.eada559c.js"
   ]
 }
